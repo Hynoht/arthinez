@@ -1,7 +1,7 @@
 const container = document.querySelector('#containes3D');
-import * as THREE from './three.js/build/three.module.js';
-import { GLTFLoader  } from './three.js/build/GLTFLoader.js';
-import { OrbitControls } from './three.js/build/OrbitControls.js';
+import * as THREE from '../three.js/build/three.module.js';
+import { GLTFLoader  } from '../three.js/build/GLTFLoader.js';
+import { OrbitControls } from '../three.js/build/OrbitControls.js';
 let house, controls;
 
 
