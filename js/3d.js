@@ -38,7 +38,7 @@ scene.add(light);
 
 
 const loader = new GLTFLoader();
-loader.load('./js/earth/scene.gltf', function (gltf) {
+loader.load('./earth/scene.gltf', function (gltf) {
     scene.add(gltf.scene);
     house = gltf.scene.children[0];
     house.rotation.y = 5;
