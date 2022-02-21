@@ -290,7 +290,9 @@ span {
     align-items: center;
     justify-content: space-around;
 }
-
+#main {
+   opacity: 0;
+}
 #main.ll {
     animation: show 2s forwards ease;
 }
@@ -326,7 +328,9 @@ span {
     align-items: center;
     min-height: 400px;
 }
-
+#menu {
+    opacity: 0;
+}
 #menu.menuShow {
     animation: showm 2s forwards ease;
 }
