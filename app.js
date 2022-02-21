@@ -20,6 +20,7 @@ window.onscroll = function(){
     } else {
         main.classList.remove('ll');
     }
+    console.log("fff");
 
     if(scrollY > 1250) {
         menu.classList.add('menuShow');
