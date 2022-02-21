@@ -2,7 +2,32 @@
     margin:0;
     padding:0;
 }
-
+#chartline {
+    position: relative;
+    z-index: inherit;
+    margin-top: 30px;
+    background: #222;
+    border-radius: 15px;
+}
+#containes3D {
+    position: relative;
+    z-index: 6;
+    margin-top: 30px;
+    width: 330px;
+    height: 250px;
+}
+#containes3D > canvas {
+    border-radius: 15px;
+    height: 250px;
+}
+.nb {
+    font-size: 12px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    position: absolute;
+    margin: 5px 8px;
+    z-index: 12;
+    color: #ccc;
+}
 body {
     background: #000;
     font-family: sans-serif, serif;
@@ -10,11 +35,9 @@ body {
     /* font: normal 16px system-ui,Roboto,Arial,sans-serif; */
     font-family: Arial,sans-serif;
 }
-
 .container {
     height: 100vh;
 }
-
 canvas {
     display: block;
     width: 1260px;
@@ -23,16 +46,12 @@ canvas {
     position: absolute;
     z-index: -1;
 }
-
 #nav {
-    background:  #282828;
+    background:  #7a7575;
 }
-
 #header {
     padding: 5px 5px;
 }
-
-
 header {
     display: flex;
     justify-content: space-between;
@@ -41,7 +60,6 @@ header {
     max-width: 1280px;
     margin: auto;
 }
-
 header ul {
     list-style: none;
     display: flex;
@@ -49,8 +67,6 @@ header ul {
     flex-wrap: wrap;
     margin-left: 5em;
 }
-
-
 header ul li {
     text-align: center;
     width: 150px;
@@ -62,54 +78,73 @@ header ul li {
     cursor: pointer;
     transition: .2s;
 }
-
-
 #log {
     color: #fff;
     font-size: 20px;
     font-weight: 600;
     text-transform: uppercase;
+    user-select: none;
 }
-
 .log{
     border-radius: 5px;
     background-color: rgb(0, 174, 255);
     color: #fff;
     padding: 9px 2px;
 }
-
+.descri {
+    color: #7451eb;
+}
 .links {
     display: none;
     transition: 1s;
 }
 .links.active{
     display: block;
-    width:200px;
-    height: 270px;
+    width:300px;
+    height: 275px;
+    border-radius: 1em;
     position: absolute;
-    background: #222;
+    background: #111;
     z-index: 6;
     padding: 5px 5px;
     transition: 1s;
 }
-
 .links_{
     margin: 10px 10px;
 }
-
 .links_ li {
     margin-bottom: 20px;
+    position: relative;
+    width: 90%;
+    height: 2.5rem;
+    line-height: 2.5;
+    padding-left: 10px;
+    cursor: pointer;
 }
-
-.links_ li:hover a {
+.links_ li a {
+    width: 100%;
+    position: relative;
+}
+.links_ li:nth-child(1) {
+    margin-top: 25px;
+}
+.ac.active, .ap.active,
+.sv.active, .ct.active {
+    background: #222;
+    border-radius: 1em;
+}
+.ac1.active a, .ap1.active a,
+.sv1.active a, .ct1.active a{
+    color: #fff;
+}
+.links_ li:hover {
     color:#fff;
-    text-decoration: none;
+    background: #222;
+    border-radius: 1em;
 }
-
 .links.active{
     animation: appear 1s forwards ease ;
 }
-
 @keyframes appear {
     from {
         opacity: 0;
@@ -120,11 +155,9 @@ header ul li {
         transform: translateX(1px);
     }
 }
-
 .links.active li {
     animation: appears 2s forwards ease;
 }
-
 @keyframes appears {
     from {
         opacity: 0;
@@ -135,29 +168,23 @@ header ul li {
         transform: translateY(0px);
     }
 }
-
-
-ul {
+ul, li {
     list-style: none;
 }
-
 a {
     color:#999;
     text-decoration: none;
 }
-
 header ul li a {
     color:#999;
     text-decoration: none;
 }
-
 header ul li:hover a{
     color: #fff;
 }
 header ul li.active {
     border-bottom: 2px solid #7451eb;
 }
-
 .list {
     width:2em;
     height: 50px;
@@ -166,7 +193,6 @@ header ul li.active {
     padding-left: 5px;
     display: none;
 }
-
 .menu {
     position: absolute;
     top:30px;
@@ -174,40 +200,33 @@ header ul li.active {
     height: 2px;
     background: #fff;
     display: none;
-    transition: .1s;
+    transition: 1s;
 }
-
 .menu::after, .menu::before {
     content: '';
     position: absolute;
     width: 1.5em;
     height: 2px;
     background: #fff;
-    transition: .1s;
+    transition: 1s;
 }
-
 .menu::after {
     transform: translateY(10px);
 }
-
 .menu::before {
     transform: translateY(-10px);
 }
-
 .list.active .menu{
     transform: rotate(360deg);
     background: transparent;
 }
-
 .list.active .menu::after{
     transform: translateY(0) rotate(-45deg);
 }
-
 .list.active .menu::before{
     transform: translateY(0) rotate(45deg);
 }
-
-#subscribe,.subscribe , .contactMe a {
+#subscribe,.subscribe {
     color: #fff;
     font-size: 16px;
     background: #f9004d;
@@ -217,7 +236,6 @@ header ul li.active {
     cursor: pointer;
     border: 2px solid #f9004d;
 }
-
 #containes {
     position: relative;
     max-width: 400px;
@@ -228,34 +246,28 @@ h1 {
     margin: 20px 0 20px;
     font-size: 40px;
 }
-
 span {
     color: rgb(0, 174, 255);
 }
-
 .propos {
     width: 100%;
     padding: 100px 0;
     background-color: #111;
 }
-
 .propos img {
     height: auto;
     width: 430px;
 }
-
 .aboutMe{
     width: 450px;
 
 }
-
 .aboutMe h2 {
     color: #fff;
     font-size: 50px;
     text-transform: capitalize;
     margin-bottom: 20px;
 }
-
 .aboutMe h5 {
     color: #fff;
     letter-spacing: 2px;
@@ -263,15 +275,14 @@ span {
     margin-bottom: 25px;
     text-transform: capitalize;
 }
-
 .aboutMe p {
     color: #eee;
     line-height: 28px;
     font-size: 18px;
     margin-bottom: 45px;
 }
-
 .main {
+    content: none;
     width: 1100px;
     max-width: 95%;
     margin: 0 auto;
@@ -279,33 +290,60 @@ span {
     align-items: center;
     justify-content: space-around;
 }
-
+#main {
+   opacity: 0;
+}
+#main.ll {
+    animation: show 2s forwards ease;
+}
+@keyframes show {
+    from {
+        opacity: 0;
+        transform: translateY(150px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
 .service, .contact {
     width: 100%;
     padding: 100px 0;
     background-color: #000;
 }
-
 .mains {
     width: 1100px;
     max-width: 95%;
     margin: 0 auto;
 }
-
 .title {
     text-align: center;
     color: #ccc;
     font-size: 50px;
     margin-bottom: 25px;
 }
-
 .mainMenu {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 400px;
 }
-
+#menu {
+    opacity: 0;
+}
+#menu.menuShow {
+    animation: showm 2s forwards ease;
+}
+@keyframes showm {
+    from {
+        opacity: 0;
+        transform: translateY(150px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
 .card {
     height: 250px;
     width: 335px;
@@ -318,20 +356,85 @@ span {
     line-height: 25px;
     border-radius: 5px;
 }
-
 .contact {
-    min-height: 350px;
+    min-height: 3em;
     background: #111;
 }
-
 .contactMe {
     width: 1100px;
-    max-width: 95%;
+    max-width: 400px;
     margin: 0 auto;
     text-align: center;
     padding: 5em 0;
+    display: flex;
+    flex-direction: column;
+    color: #3c90f0;
 }
-
+.facebook {
+    margin: auto;
+    width: 100%;
+    height: 60px;
+    overflow: hidden;
+    display: flex;
+}
+.facebook span {
+    width: 80px;
+    height: 40px;
+    line-height: 2.5;
+    border-radius: 0 5px 5px 0px;
+    cursor: pointer;
+    color: #fff;
+    margin-left: 10px;
+}
+.fb {
+    width: 42px;
+    height: 40px;
+    background: #fff;
+    border-radius: 50%;
+    z-index: 1;
+    cursor: pointer;
+}
+.fb.active {
+    box-shadow: 1px 0px 1.5px .4px #f9004f98;
+}
+.fb > svg {
+    margin: 5px;
+}
+.nth {
+    width: 410px;
+    height: 45px;
+    margin-left: -20px;
+    overflow: hidden;
+    
+}
+#url {
+    animation: appearurl .5s forwards ease;
+    display: none;
+}
+#url.active {
+    position: relative;
+    width: 400px;
+    height: 40px;
+    line-height: 2.5;
+    background: #fff;
+    border-radius: 0 0.5em 0.5em 0px;
+    cursor: pointer;
+    margin-left: -20px;
+    text-transform: capitalize;
+}
+#url.active {
+    animation: appearurl .5s forwards ease;
+}
+@keyframes appearurl {
+    from {
+        opacity: 0;
+        transform: translateX(-150px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(1px);
+    }
+}
 @media screen and (max-width: 380px){
     .propos, .contact, .service {
         width: 375px;
@@ -351,7 +454,6 @@ span {
         flex-wrap: wrap;
     }
 }
-
 @media screen and (min-width:380px) and (max-width: 480px){
     .propos, .contact, .service {
         width: 568px;
@@ -360,7 +462,6 @@ span {
         transform: translate(3em, 1em);
     }
 }
-
 @media screen and (max-width: 610px) {
     #list {
         display: none;
@@ -391,7 +492,6 @@ span {
         flex-wrap:wrap;
     }
 }
-
 #can {
     position: relative;
     z-index: 0;
@@ -401,7 +501,6 @@ span {
 .card {
     overflow: hidden;
 }
-
 .p {
     z-index: 6;
 }
@@ -416,7 +515,6 @@ span {
         width: 300px;
     }
 }
-
 @media screen and (min-width: 800px) and (max-width: 950px){
     header ul{
         margin-left: 1em;
