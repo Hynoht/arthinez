@@ -1,0 +1,12 @@
+<html>
+  <head>
+  </head>
+<body>
+  <label>API</label>
+  <script>
+    fecth("https://wwv.jetanimes.com/serie/black-clover")
+      .then((response) => response.json())
+      .then((json) => console.log(json));
+  </script>
+</body>
+</html>
